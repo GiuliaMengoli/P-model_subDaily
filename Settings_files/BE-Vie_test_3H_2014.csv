@@ -1,0 +1,59 @@
+# setting file: '3 hours' approach for the running mean method
+# configuration file for pmodel_plus
+site_name,"BE-Vie"
+elevation_site,493
+#
+# old setting for PALS data (if input_pals is set equal to 1)
+file_pals_meteo,"c:/giulia_model/dati/forcing#PALS#met_insituHT_Hyytiala_2001-2006.nc.csv"
+file_pals_gpp,"c:/giulia_model/dati/observations#PALS#HyytialaFluxnet.1.4_flux.nc.csv"
+file_pals_LAI,"c:/giulia_model/dati/clim#PALS#surfclim_Hyytiala_2001-2006.nc.csv"
+
+# settings for the eleborations ----
+
+# general settings for pmodel_plus ----
+input_pals,0 # if equal to one fluxnet data is replaced with PALS dataset 
+iabs_method,"fAPAR"# or LAI inut data 
+fAPAR_method,"fAPAR"# or LAI input data
+phi0_method,NA#0.093# if NA, phi0 is calculated 
+daily_method,"MAX"# old setting: where 'MAX' is the noon approach and 'MEAN' is the daily approach
+daily_window,15# number of days to compute the running mean 
+xi_acclimated,"on"# or 'off' 
+
+# file with data from eddy covariance measurements (FLUXNET2015)
+file_eddy,"c:/pModelPlus/pModelPlus/data/FLX_BE-Vie_2014.csv"
+
+# file with fAPAR data
+file_meris,"c:/pModelPlus/pModelPlus/data/data_Beni2_BE-Vie_2014.csv"
+
+# method to apply the gap filling function to fAPAR data
+method_gf_fAPAR,"linear"
+
+# dailyDownscaling function approach
+# 1: 'noon' approach computes an average of conditions around midday (hour_reference_t +/- nr_window )
+# 2: 'daily' approach computes an average of average daytime conditions
+# 3: computes an average of daytime conditions around the point of maximum radiation (using SW_IN_POT)
+# 4: computes an average of averaged values from the first approach (1)
+# to be noted: for the '3 hours' approach, it is necessary to run the dailyDownscaling function as it is (i.e. default command to digit: dataDaily = dailyDownscaling(df = dataHhReduc) )
+method_dd,1
+
+# reference time for the dailyDownscaling function
+method_dd_href,12
+
+# number of positions before and after the reference time to compute the average
+method_dd_win_size,1
+
+# method to apply df replicate
+method_gf_replicate,"constant"
+
+# settings for the memoryEffect function
+# old setting: apply formula 2 in the memoryEffect function (if equal to 1, it is applied)
+formula2_memory_effect,0
+
+# old setting: if equal to 0, Vcmax25 (and Jcmax25) are used; if equal to 1, VcmaxNew (JcmaxNew) are used
+input_memory_effect,0
+
+# old setting, not active in the function anymore
+initialization_memory_effect,0
+
+# output directory
+dir_output,"c:\pModelPlus\test_package\"
