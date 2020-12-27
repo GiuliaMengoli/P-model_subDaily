@@ -9,9 +9,9 @@
 
 # In settings files folder there are some examples of settings files to have a template to use for each approach (e.g NOON, DAILY, 3-HOUR and 'weighted mean approach'). To run the model on another site, it is necessary to change the site name, site elevation and data paths in the setting file.
 
+# The figures in the manuscript were generated using the R scripts stored in the 'Figs' folder.
+
 # Author contact: Giulia Mengoli, gmengoli@ic.ac.uk or giulia.mengoli@gmail.com
 # Acknowledgement: this project is funded by the ERC-funded project REALM (grant number 787203)
 
 # Please contact the author prior to any usage of the code
-
-
