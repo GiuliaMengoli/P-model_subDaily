@@ -12,4 +12,6 @@
 # Author contact: Giulia Mengoli, gmengoli@ic.ac.uk or giulia.mengoli@gmail.com
 # Acknowledgement: this project is funded by the ERC-funded project REALM (grant number 787203)
 
+# Please contact the author prior to any usage of the code
+
 
